@@ -181,33 +181,6 @@ border-width: 2px;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>380</y>
-      <width>341</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>13</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(20, 12, 255);
-border-style: outset;
-border-width: 2px;
-border-radius: 15px;
-border-color: black;</string>
-    </property>
-    <property name="text">
-     <string>Esqueceu a senha? Clique aqui</string>
-    </property>
-   </widget>
    <zorder>label_3</zorder>
    <zorder>label_2</zorder>
    <zorder>pushButton</zorder>
@@ -216,7 +189,6 @@ border-color: black;</string>
    <zorder>label</zorder>
    <zorder>pushButton_2</zorder>
    <zorder>label_4</zorder>
-   <zorder>pushButton_3</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
