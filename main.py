@@ -57,7 +57,19 @@ def login():
     except:
         error_dialog.showMessage('verifique o usuario e senha')
 
-
+def show_reset_password_page():
+    first_page.close()
+    reset_password_page.show()
+#recuperar senha via e-mail com o firebase
+def reset_password():
+    try:
+        email = reset_password_page.lineEdit.text()
+        auth.send_password_reset_email(email)
+        reset_password_page.close()
+        error_dialog.showMessage('Enviamos o e-mail para a recuperação da sua senha, verifque na caixa de spam')
+        first_page.show()
+    except:
+        error_dialog.showMessage('Verifique se o e-mail está correto')
 
 def logout():
     #auth.signOut()
@@ -70,18 +82,21 @@ app = QtWidgets.QApplication([])
 
 #define as telas do pyqt5
 first_page = uic.loadUi('primeira_tela.ui')
+reset_password_page = uic.loadUi('reset_password_tela.ui')
 page_logged = uic.loadUi('segunda_tela.ui')
 creat_account_page = uic.loadUi('tela_cadastro.ui')
 
 #conecta os botões das paginas com as funçoes 
 first_page.pushButton.clicked.connect(login)
 first_page.pushButton_2.clicked.connect(show_page_create_accout)
+first_page.pushButton_3.clicked.connect(show_reset_password_page)
 creat_account_page.pushButton.clicked.connect(creat_account)
 page_logged.pushButton.clicked.connect(logout)
+reset_password_page.pushButton.clicked.connect(reset_password)
 
 #mensagem de erro
 error_dialog = QtWidgets.QErrorMessage()
 
-#carreg a primeiro pagina
+#carrega a primeiro pagina
 first_page.show()
 app.exec()  
